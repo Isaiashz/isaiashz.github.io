@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestros 8 Meses✨💖</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos base (sin cambios mayores de la versión 3D extrema) */
+        :root {
+            --primary-bg-light: #ff6a88;
+            --secondary-bg-dark: #FF3366;
+            --container-bg: rgba(255, 255, 255, 0.95);
+            --accent-text: #8A2BE2;
+            --main-text-color: #333;
+            --button-main: #FFC0CB;
+            --button-hover: #FF8BA7;
+            --message-bg: #E0FFFF;
+            --message-border: #66CCFF;
+            --message-text: #006699;
+            --heart-color: #FF1493;
+            --shadow-strong: rgba(0, 0, 0, 0.4);
+            --star-color-1: #fff;
+            --star-color-2: #fdd835; /* Amarillo dorado */
+            --star-color-3: #e0f7fa; /* Azul claro */
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(to right bottom, var(--primary-bg-light), var(--secondary-bg-dark));
+            color: var(--main-text-color);
+            overflow: hidden;
+            perspective: 1800px;
+            animation: backgroundShift 15s infinite alternate ease-in-out;
+            cursor: default; /* Cambiar el cursor si lo deseas */
+        }
+
+        @keyframes backgroundShift {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        .scene {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform-style: preserve-3d;
+        }
+
+        .container {
+            background-color: var(--container-bg);
+            padding: 40px 60px;
+            border-radius: 25px;
+            box-shadow: 0 30px 70px var(--shadow-strong);
+            text-align: center;
+            max-width: 90%;
+            width: 700px;
+            animation: fadeInScale3D 2.5s ease-out forwards;
+            position: relative;
+            z-index: 2;
+            max-height: 95vh;
+            overflow-y: auto;
+            border: 5px solid var(--accent-text);
+            transform-style: preserve-3d;
+            transform: rotateX(15deg) rotateY(-15deg) translateZ(80px);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .container:hover {
+            transform: rotateX(8deg) rotateY(8deg) translateZ(120px);
+            box-shadow: 0 40px 90px var(--shadow-strong);
+        }
+
+        @keyframes fadeInScale3D {
+            0% { opacity: 0; transform: translateY(-150px) scale(0.6) rotateX(60deg) rotateY(-60deg); }
+            100% { opacity: 1; transform: translateY(0) scale(1) rotateX(15deg) rotateY(-15deg) translateZ(80px); }
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            color: var(--accent-text);
+            font-size: 4.5em;
+            margin-bottom: 25px;
+            text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+            animation: bounceInRotateText 2s ease-out;
+            transform: translateZ(50px);
+        }
+
+        @keyframes bounceInRotateText {
+            0% { transform: scale(0.2) rotateX(120deg) rotateY(120deg) translateZ(0); opacity: 0; }
+            50% { transform: scale(1.3) rotateX(-20deg) rotateY(20deg) translateZ(80px); opacity: 1; }
+            70% { transform: scale(0.8) rotateX(10deg) rotateY(-10deg) translateZ(60px); }
+            100% { transform: scale(1) rotateX(0deg) rotateY(0deg) translateZ(50px); }
+        }
+
+        p {
+            font-size: 1.4em;
+            line-height: 1.7;
+            margin-bottom: 30px;
+            color: var(--main-text-color);
+            transform: translateZ(20px);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button {
+            background-color: var(--button-main);
+            color: var(--accent-text);
+            padding: 18px 40px;
+            border: none;
+            border-radius: 60px;
+            font-size: 1.3em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 25px var(--shadow-strong);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transform: translateZ(30px);
+        }
+
+        .cta-button:hover {
+            background-color: var(--button-hover);
+            transform: translateY(-8px) scale(1.08) translateZ(50px);
+            box-shadow: 0 15px 30px var(--shadow-strong);
+        }
+
+        /* Estilos para el slideshow */
+        .slideshow-section {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px dashed var(--accent-text);
+            transform: translateZ(10px);
+        }
+
+        .slideshow-section h2 {
+            font-family: 'Pacifico', cursive;
+            color: var(--accent-text);
+            font-size: 3em;
+            margin-bottom: 30px;
+            transform: translateZ(30px);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .slideshow-wrapper {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            background-color: #eee;
+            transform-style: preserve-3d;
+            transform: translateZ(20px) rotateY(-8deg);
+        }
+
+        .slideshow {
+            display: flex;
+            transition: transform 0.7s ease-in-out;
+            scroll-snap-type: x mandatory;
+            transform-style: preserve-3d;
+        }
+
+        .slide {
+            flex: 1 0 100%;
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 25px;
+            box-sizing: border-box;
+            background-color: var(--container-bg);
+            transform-style: preserve-3d;
+        }
+
+        .slide img {
+            max-width: 95%;
+            max-height: 400px;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            border: 3px solid var(--button-main);
+            transform: translateZ(15px) rotateZ(-2deg);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .slide img:hover {
+            transform: translateZ(25px) rotateZ(2deg) scale(1.05);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .slide-caption {
+            background: linear-gradient(to right, #FF8BA7, #FF3366);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 1.2em;
+            text-align: center;
+            max-width: 90%;
+            font-weight: bold;
+            text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+            transform: translateZ(8px);
+        }
+
+        .slideshow-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%) translateZ(50px);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 15px;
+            box-sizing: border-box;
+        }
+
+        .slideshow-nav button {
+            background: var(--accent-text);
+            border: none;
+            color: white;
+            font-size: 3em;
+            cursor: pointer;
+            padding: 8px 20px;
+            border-radius: 50%;
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.4);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .slideshow-nav button:hover {
+            background-color: #C71585;
+            transform: scale(1.15) translateZ(60px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .message-box {
+            background-color: var(--message-bg);
+            padding: 25px;
+            border-radius: 20px;
+            margin-top: 40px;
+            border: 3px dashed var(--message-border);
+            font-style: italic;
+            color: var(--message-text);
+            font-size: 1.2em;
+            animation: slideInUp 1.5s ease-out;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+            transform: translateZ(12px);
+        }
+
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(50px) translateZ(0); }
+            to { opacity: 1; transform: translateY(0) translateZ(12px); }
+        }
+
+        .heart-animation-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+            transform-style: preserve-3d;
+        }
+
+        .heart {
+            position: absolute;
+            background-color: var(--heart-color);
+            transform: rotate(-45deg) translateZ(var(--heart-z));
+            animation: floatUpBurst3D 9s infinite ease-out; /* Mantenido en 9s para flotar lento */
+            opacity: 0;
+            will-change: transform, opacity;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .heart::before,
+        .heart::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: var(--heart-color);
+            border-radius: 50%;
+        }
+
+        .heart::before {
+            top: -50%;
+            left: 0;
+        }
+
+        .heart::after {
+            top: 0;
+            left: 50%;
+        }
+
+        @keyframes floatUpBurst3D {
+            0% { transform: translateY(110vh) scale(0) rotate(-45deg) translateZ(var(--heart-start-z)); opacity: 0; }
+            10% { opacity: 1; transform: translateY(90vh) scale(0.5) rotate(-45deg) translateZ(var(--heart-mid-z)); }
+            50% { opacity: 1; transform: translateY(30vh) scale(1.2) rotate(-45deg) translateZ(var(--heart-end-z)); }
+            100% { transform: translateY(-50px) scale(0.8) rotate(-45deg) translateZ(var(--heart-end-z)); opacity: 0; }
+        }
+
+        .love-message {
+            font-family: 'Pacifico', cursive;
+            font-size: 3.5em;
+            color: var(--button-hover);
+            text-shadow: 3px 3px 7px var(--shadow-strong);
+            opacity: 0;
+            position: fixed;
+            top: 105%; /* ¡AQUÍ ESTÁ EL CAMBIO! Bajamos la posición vertical. */
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.5) translateZ(250px);
+            animation: lovePopBurst3D 2.5s forwards;
+            z-index: 100;
+            text-align: center;
+            width: 90%;
+            max-width: 600px;
+        }
+
+        /* La animación lovePopBurst3D también necesita ajustarse para reflejar el nuevo 'top' */
+        @keyframes lovePopBurst3D {
+            0% { opacity: 0; transform: translate(-50%, -50%) scale(0.2) rotateX(180deg) rotateY(180deg) translateZ(0); }
+            50% { opacity: 1; transform: translate(-50%, -50%) scale(1.7) rotateX(-20deg) rotateY(-20deg) translateZ(150px); }
+            80% { transform: translate(-50%, -50%) scale(1.3) rotateX(10deg) rotateY(10deg) translateZ(200px); }
+            100% { opacity: 1; transform: translate(-50%, -50%) scale(1) rotateX(0deg) rotateY(0deg) translateZ(250px); }
+        }
+
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; display: none; }
+        }
+
+        @keyframes slideInDown {
+            from { opacity: 0; transform: translateY(-50px) translateZ(0); }
+            to { opacity: 1; transform: translateY(0) translateZ(12px); }
+        }
+
+        /* Estilos para las estrellas */
+        .star {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: var(--star-color-1);
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0;
+            animation: twinkle 1s ease-in-out infinite alternate, fadeOutStar 1s forwards;
+            transform-origin: center center;
+            z-index: 1000; /* Asegurar que estén por encima de todo */
+        }
+
+        .star::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            width: 5px;
+            height: 5px;
+            background-color: inherit;
+            border-radius: 2px;
+        }
+
+        .star-effect-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Para que no interfieran con los clicks */
+            z-index: 999; /* Estar por encima de la mayoría del contenido */
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.8; transform: scale(1); }
+            100% { opacity: 1; transform: scale(1.2); }
+        }
+
+        @keyframes fadeOutStar {
+            0% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="heart-animation-container" id="heart-container"></div>
+    <div class="star-effect-container" id="star-container"></div>
+
+    <div class="scene">
+        <div class="container">
+            <h1>Nuestros 8 Meses...FElizzz<span style="color: #FF1493;">✨💖</span></h1>
+            <p style="transform: translateZ(25px);">Hoy celebramos 8 meses de un amor que brilla como las estrellas, un amor que ha tenido un inicio y no tiene Fin.</p>
+            <p style="transform: translateZ(30px);">Eres mi estrella Amor mio, esa luz que ilumina mis dias a través de esa sonrisa, a traves de esos ojitos que me encantan muchooo. ¡Gracias por cada momento de felicidad!</p>
+
+            <button class="cta-button" id="surpriseButton">¡Clic aqui amor mio! ✨</button>
+
+            <div class="message-box" id="secretMessage" style="display: none; transform: translateZ(15px);">
+                <p style="font-weight: bold; transform: translateZ(5px);">Mi amor hermosa, mi chiquititita</p>
+                <p style="transform: translateZ(8px);">Pues hoy gracias a Dios cumplimos 8 meses y de verdad que parece que ha pasado volando el tiempo pero a la vez durado mucho contigo mi niña, me pongo a pensar todo lo que hemos vivido juntos desde ese dia que te volviste mi novia, mi amorr querida.</p>
+                <p style="transform: translateZ(10px);">Y como te dije algun dia al principio era un te quiero de solo amigos, pero eso fue creciendo muchoo y se volvió un te quiero pero un te quiero mas alla, mas profundo sintiendolo desde mi corazon de una forma que nunca la habia llegado a imaginar... y ahora lamento decirlo amor es te quiero ya cambió nuevamente porque lo que siento por ti ya no es un te quiero, osea si te quiero con todo mi corazon y mis fuerzas... pero ha cambiado a algo mucho mas fuerte y verdadero y con sinceridad ahora te quiero decir... Te Amoo mi amorr, enserio, te amo por la perosna que eres tan increible, por hacerme feliz, por el cariño, el apoyo mutuo que tenemos, Te amo por todas las cosas, por nuestros recuerdosy por todo lo que falta a tu lado mi nila hermosa, Gracias por esos 8 meses, eres muy importante para mi./p>
+                <p style="font-style: normal; font-weight: bold; transform: translateZ(12px);">...TE AMOO mi amor, con un gran amor</p>
+                <p style="font-style: normal; transform: translateZ(15px);">Tu novio querido...Chay ❤️</p>
+            </div>
+
+            <div class="love-message" id="loveMessage" style="display: none;">¡Te Quiero Más Allá de las Estrellas!</div>
+
+            <div class="slideshow-section" style="transform: translateZ(15px);">
+                <h2 style="transform: translateZ(35px);">Nuestros Momentos Juntos 📸</h2>
+                <div class="slideshow-wrapper">
+                    <div class="slideshow" id="ourSlideshow">
+                        <div class="slide">
+                            <img src="img.jpg" alt="Foto de nuestro inicio">
+                            <div class="slide-caption" style="transform: translateZ(10px);">El brillo inicial de nuestra historia, Donde todo comenzó mi niña</div>
+                        </div>
+                        <div class="slide">
+                            <img src="2.jpg" alt="Foto de una aventura">
+                            <div class="slide-caption" style="transform: translateZ(10px);">Explorando juntos las maravillas del universo, pero yo se que mi maravilla y mi universo eres tú</div>
+                        </div>
+                        <div class="slide">
+                            <img src="3.jpg" alt="Foto de tu sonrisa">
+                            <div class="slide-caption" style="transform: translateZ(10px);">Nuestra noche buena juntoss y si muy buena porque estuve contigoo mi hermosa</div>
+                        </div>
+                        <div class="slide">
+                            <img src="4.jpg" alt="Foto en su lugar favorito">
+                            <div class="slide-caption" style="transform: translateZ(10px);">... y ese duoooo, que bonitos</div>
+                        </div>
+                        <div class="slide">
+                            <img src="5.jpg" alt="Foto que muestre su complicidad">
+                            <div class="slide-caption" style="transform: translateZ(10px);">Amor enserio me gusta pasarla a tu lado, Amo estar tiempo contigo, me enncanta mi amor... Te Amo Mucho con todo mi corazon</div>
+                        </div>
+                        </div>
+                    <div class="slideshow-nav" style="transform: translateZ(60px);">
+                        <button onclick="changeSlide(-1)">❮</button>
+                        <button onclick="changeSlide(1)">❯</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const surpriseButton = document.getElementById('surpriseButton');
+            const secretMessage = document.getElementById('secretMessage');
+            const heartContainer = document.getElementById('heart-container');
+            const loveMessage = document.getElementById('loveMessage');
+            const starContainer = document.getElementById('star-container');
+            let loveMessageTimeout;
+
+            // --- Funcionalidad del Slideshow ---
+            const slideshowElement = document.getElementById('ourSlideshow');
+            const slides = document.querySelectorAll('#ourSlideshow .slide');
+            let currentSlideIndex = 0;
+
+            function showSlide(index) {
+                if (index < 0) {
+                    index = slides.length - 1;
+                } else if (index >= slides.length) {
+                    index = 0;
+                }
+                currentSlideIndex = index;
+                const offset = -currentSlideIndex * 100;
+                slideshowElement.style.transform = `translateX(${offset}%)`;
+            }
+
+            window.changeSlide = function(direction) {
+                showSlide(currentSlideIndex + direction);
+            };
+
+            // --- Resto de la funcionalidad ---
+            surpriseButton.addEventListener('click', () => {
+                if (secretMessage.style.display === 'block') {
+                    secretMessage.style.display = 'none';
+                    surpriseButton.style.display = 'block';
+                    surpriseButton.style.animation = 'none';
+                    void surpriseButton.offsetWidth;
+                    surpriseButton.style.animation = '';
+                } else {
+                    secretMessage.style.display = 'block';
+                    surpriseButton.style.animation = 'fadeOut 1s forwards';
+                    secretMessage.style.animation = 'slideInDown 1s forwards';
+
+                    clearTimeout(loveMessageTimeout);
+                    loveMessage.style.display = 'block';
+                    loveMessage.classList.add('lovePopBurst3D');
+                    loveMessageTimeout = setTimeout(() => {
+                        loveMessage.classList.remove('lovePopBurst3D');
+                        loveMessage.style.display = 'none';
+                    }, 2500);
+                }
+            });
+
+
+            function createHeart() {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.style.width = `${Math.random() * 25 + 15}px`;
+                heart.style.height = heart.style.width;
+                heart.style.left = `${Math.random() * 100}%`;
+                heart.style.animationDuration = `${Math.random() * 6 + 6}s`;
+                heart.style.animationDelay = `${Math.random() * 3}s`;
+
+                const randomZStart = Math.random() * 600 - 300;
+                const randomZMid = Math.random() * 600 - 300;
+                const randomZEnd = Math.random() * 600 - 300;
+
+                heart.style.setProperty('--heart-start-z', `${randomZStart}px`);
+                heart.style.setProperty('--heart-mid-z', `${randomZMid}px`);
+                heart.style.setProperty('--heart-end-z', `${randomZEnd}px`);
+
+                heartContainer.appendChild(heart);
+
+                heart.addEventListener('animationend', () => {
+                    heart.remove();
+                });
+            }
+
+            // Un corazón cada 2 segundos, lo que reducirá drásticamente la cantidad.
+            setInterval(createHeart, 2000); 
+
+            showSlide(0);
+
+            // --- Efecto de Estrellas al Seguir el Cursor ---
+            document.addEventListener('mousemove', (e) => {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                star.style.left = `${e.clientX}px`;
+                star.style.top = `${e.clientY}px`;
+
+                // Pequeña variación de tamaño y color
+                const size = Math.random() * 5 + 5;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                const colorIndex = Math.floor(Math.random() * 3);
+                const colors = ['var(--star-color-1)', 'var(--star-color-2)', 'var(--star-color-3)'];
+                star.style.backgroundColor = colors[colorIndex];
+
+                starContainer.appendChild(star);
+
+                // Remover la estrella después de la animación
+                setTimeout(() => {
+                    star.remove();
+                }, 1000); // Debe coincidir con la duración de fadeOutStar
+            });
+        });
+    </script>
+</body>
+</html>
